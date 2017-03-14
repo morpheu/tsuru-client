@@ -1,0 +1,44 @@
+# goreleaser.yml
+# Build customization
+build:
+  main: ./tsuru/main.go
+  binary_name: tsuru
+  goos:
+    - windows
+    - darwin
+    - linux
+  goarch:
+    - amd64
+
+# Archive customization
+archive:
+  name_template: "{{.BinaryName}}_{{.Version}}_{{.Os}}_{{.Arch}}"
+  format: tar.gz
+  replacements:
+    darwin: macOS
+
+# Mac OS Homebrew
+brew:
+  # Reporitory to push the tap to.
+  repo: morpheu/homebrew-tsuru
+
+  # Folder inside the repository to put the formula.
+  # Default is the root folder.
+  folder: Formula
+
+  # Dependencies of your package
+  dependencies:
+    - go
+
+  # Custom install 
+  install:|
+    system "bash", "-c", "test -n \"$(go version | awk '{print \$3}' | perl -ne 'print if /go1\.[0-4](\.[0-9]+)?$/')\" && echo ERROR: tsuru requires Go 1.5 or later, your version is: $(go version) && exit 1 || echo proceeding ..."
+    system "bash", "-c", "GOPATH=\"$PWD\" go build -o tsuru github.com/tsuru/tsuru-client/tsuru"
+    ENV['TSURU_PATH'] = "./tsuru"
+    bin.install "tsuru"
+    bash_completion.install "src/github.com/tsuru/tsuru-client/misc/bash-completion" => "tsuru"
+    zsh_completion.install "src/github.com/tsuru/tsuru-client/misc/zsh-completion" => "tsuru"
+
+fpm:
+  formats:
+    - deb
