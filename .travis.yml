@@ -23,3 +23,4 @@ matrix:
     - go: master
 after_success:
   - test -n "$TRAVIS_TAG" && curl -sL https://raw.githubusercontent.com/morpheu/push-to-packagecloud/master/push.sh | GORELEASE_PACKAGE_NAME=tsuru PACKAGE_NAME=tsuru-client bash
+
