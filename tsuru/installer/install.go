@@ -14,9 +14,9 @@ import (
 
 	"github.com/tsuru/config"
 	"github.com/tsuru/gnuflag"
-	"github.com/tsuru/tsuru-client/tsuru/admin"
-	"github.com/tsuru/tsuru-client/tsuru/client"
-	"github.com/tsuru/tsuru-client/tsuru/installer/dm"
+	"github.com/morpheu/tsuru-client/tsuru/admin"
+	"github.com/morpheu/tsuru-client/tsuru/client"
+	"github.com/morpheu/tsuru-client/tsuru/installer/dm"
 	"github.com/tsuru/tsuru/cmd"
 	"github.com/tsuru/tsuru/iaas"
 	"github.com/tsuru/tsuru/iaas/dockermachine"

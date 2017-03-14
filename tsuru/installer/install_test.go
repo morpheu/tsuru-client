@@ -14,7 +14,7 @@ import (
 
 	"github.com/docker/machine/drivers/fakedriver"
 	"github.com/docker/machine/libmachine/host"
-	"github.com/tsuru/tsuru-client/tsuru/installer/dm"
+	"github.com/morpheu/tsuru-client/tsuru/installer/dm"
 	"github.com/tsuru/tsuru/cmd"
 	"github.com/tsuru/tsuru/cmd/cmdtest"
 	"github.com/tsuru/tsuru/iaas"

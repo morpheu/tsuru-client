@@ -7,7 +7,7 @@ package installer
 import (
 	"reflect"
 
-	"github.com/tsuru/tsuru-client/tsuru/installer/dm"
+	"github.com/morpheu/tsuru-client/tsuru/installer/dm"
 	"github.com/tsuru/tsuru/iaas"
 	"github.com/tsuru/tsuru/iaas/dockermachine"
 	check "gopkg.in/check.v1"

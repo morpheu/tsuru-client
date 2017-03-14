@@ -18,7 +18,7 @@ import (
 	"github.com/docker/machine/libmachine/provision"
 	"github.com/docker/machine/libmachine/provision/serviceaction"
 	"github.com/fsouza/go-dockerclient"
-	"github.com/tsuru/tsuru-client/tsuru/installer/dm"
+	"github.com/morpheu/tsuru-client/tsuru/installer/dm"
 	"github.com/tsuru/tsuru/cmd"
 	"github.com/tsuru/tsuru/iaas/dockermachine"
 )

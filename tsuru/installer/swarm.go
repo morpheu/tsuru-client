@@ -11,7 +11,7 @@ import (
 	"github.com/docker/docker/api/types/swarm"
 	"github.com/fsouza/go-dockerclient"
 	"github.com/pkg/errors"
-	"github.com/tsuru/tsuru-client/tsuru/installer/dm"
+	"github.com/morpheu/tsuru-client/tsuru/installer/dm"
 	"github.com/tsuru/tsuru/iaas/dockermachine"
 )
 
