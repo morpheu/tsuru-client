@@ -31,7 +31,7 @@ brew:
     - go
 
   # Custom install 
-  install:|
+  install: |
     system "bash", "-c", "test -n \"$(go version | awk '{print \$3}' | perl -ne 'print if /go1\.[0-4](\.[0-9]+)?$/')\" && echo ERROR: tsuru requires Go 1.5 or later, your version is: $(go version) && exit 1 || echo proceeding ..."
     system "bash", "-c", "GOPATH=\"$PWD\" go build -o tsuru github.com/morpheu/tsuru-client/tsuru"
     ENV['TSURU_PATH'] = "./tsuru"
