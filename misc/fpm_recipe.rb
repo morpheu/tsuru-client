@@ -13,15 +13,15 @@ FPM::Util.send :module_function, :logger
 FPM::Util.logger.level = :info
 FPM::Util.logger.subscribe STDERR
 
-if !ENV.key?('PACKAGE_NAME') || !ENV.key?('PACKAGE_DIR') || !ENV.key?('PACKAGE_VERSION')
-  puts "PACKAGE_NAME PACKAGE_DIR and PACKAGE_VERSION should be set"
+if !ENV.key?('PACKAGE_DIR') || !ENV.key?('PACKAGE_VERSION')
+  puts "PACKAGE_DIR and PACKAGE_VERSION should be set"
   exit 1
 end
 
 package = FPM::Package::Dir.new
 
 # Set some attributes
-package.name = ENV['PACKAGE_NAME']
+package.name = 'tsuru-client'
 package.version = ENV['PACKAGE_VERSION']
 package.maintainer = 'tsuru@corp.globo.com'
 package.vendor = 'Tsuru team <tsuru@corp.globo.com>'
