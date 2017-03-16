@@ -35,4 +35,3 @@ brew:
     bin.install "tsuru"
     bash_completion.install "misc/bash-completion" => "tsuru"
     zsh_completion.install "misc/zsh-completion" => "tsuru"
-
