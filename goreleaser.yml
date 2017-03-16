@@ -4,9 +4,7 @@ build:
   main: ./tsuru/main.go
   binary_name: tsuru
   goos:
-    - windows
     - darwin
-    - linux
   goarch:
     - amd64
 
@@ -16,6 +14,9 @@ archive:
   format: tar.gz
   replacements:
     darwin: macOS
+  files:
+    - misc/bash-completion
+    - misc/zsh-completion
 
 # Mac OS Homebrew
 brew:
@@ -25,3 +26,12 @@ brew:
   # Folder inside the repository to put the formula.
   # Default is the root folder.
   folder: Formula
+
+  # Only use brew to stable releases 
+  version_match: "^[0-9\.]+$"
+
+  # Custom install
+  install: |
+    bin.install "tsuru"
+    bash_completion.install "misc/bash-completion" => "tsuru"
+    zsh_completion.install "misc/zsh-completion" => "tsuru"
