@@ -4,7 +4,9 @@ build:
   main: ./tsuru/main.go
   binary_name: tsuru
   goos:
+    - windows
     - darwin
+    - linux
   goarch:
     - amd64
 
